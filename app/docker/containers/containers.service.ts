@@ -1,11 +1,34 @@
 import { EnvironmentId } from '@/portainer/environments/types';
 import PortainerError from '@/portainer/error';
-import axios from '@/portainer/services/axios';
+import axios, { parseAxiosError } from '@/portainer/services/axios';
 
 import { NetworkId } from '../networks/types';
 import { genericHandler } from '../rest/response/handlers';
 
-import { ContainerId, DockerContainer } from './types';
+import { ContainerId, DockerContainer, DockerContainerResponse } from './types';
+import { parseViewModel } from './utils';
+
+export interface Filters {
+  label?: string[];
+}
+
+export async function getContainers(
+  environmentId: EnvironmentId,
+  all = true,
+  filters?: Filters
+) {
+  try {
+    const response = await axios.get<DockerContainerResponse[]>(
+      urlBuilder(environmentId, undefined, 'json'),
+      {
+        params: { all, filters: filters && JSON.stringify(filters) },
+      }
+    );
+    return response.data.map((c) => parseViewModel(c));
+  } catch (error) {
+    throw parseAxiosError(error as Error, 'Unable to retrieve containers');
+  }
+}
 
 export interface Filters {
   label?: string[];
