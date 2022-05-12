@@ -10,6 +10,7 @@ import { parseViewModel } from './utils';
 
 export interface Filters {
   label?: string[];
+  network?: NetworkId[];
 }
 
 export async function getContainers(
@@ -28,11 +29,6 @@ export async function getContainers(
   } catch (error) {
     throw parseAxiosError(error as Error, 'Unable to retrieve containers');
   }
-}
-
-export interface Filters {
-  label?: string[];
-  network?: NetworkId[];
 }
 
 export async function startContainer(
@@ -112,24 +108,6 @@ export async function removeContainer(
     }
   } catch (e) {
     throw new PortainerError('Unable to remove container', e as Error);
-  }
-}
-
-export async function getContainers(
-  environmentId: EnvironmentId,
-  filters?: Filters
-) {
-  try {
-    const { data } = await axios.get<DockerContainer[]>(
-      urlBuilder(environmentId, '', 'json'),
-      {
-        params: { all: 0, filters },
-      }
-    );
-
-    return data;
-  } catch (e) {
-    throw new PortainerError('Unable to retrieve containers', e as Error);
   }
 }
 
