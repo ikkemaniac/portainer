@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { CopyButton } from '@/react/components/buttons/CopyButton';
-import { Code } from '@/portainer/components/Code';
+import { Code } from '@/react/components/Code';
 import { NavTabs } from '@/portainer/components/NavTabs/NavTabs';
 import { getAgentShortVersion } from '@/portainer/views/endpoints/helpers';
 import { useAgentDetails } from '@/portainer/environments/queries/useAgentDetails';
