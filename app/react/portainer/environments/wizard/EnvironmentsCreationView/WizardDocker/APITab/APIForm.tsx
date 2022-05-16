@@ -4,8 +4,8 @@ import { useReducer } from 'react';
 import { LoadingButton } from '@/react/components/buttons/LoadingButton';
 import { useCreateRemoteEnvironmentMutation } from '@/portainer/environments/queries/useCreateEnvironmentMutation';
 import { notifySuccess } from '@/portainer/services/notifications';
-import { FormControl } from '@/portainer/components/form-components/FormControl';
-import { Input } from '@/portainer/components/form-components/Input';
+import { FormControl } from '@/react/components/form-components/FormControl';
+import { Input } from '@/react/components/form-components/Input';
 import {
   Environment,
   EnvironmentCreationTypes,

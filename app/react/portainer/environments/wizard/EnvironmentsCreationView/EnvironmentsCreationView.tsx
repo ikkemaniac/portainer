@@ -10,7 +10,7 @@ import { PageHeader } from '@/portainer/components/PageHeader';
 import { Button } from '@/react/components/buttons';
 import { Environment, EnvironmentId } from '@/portainer/environments/types';
 import { useAnalytics } from '@/angulartics.matomo/analytics-services';
-import { FormSection } from '@/portainer/components/form-components/FormSection';
+import { FormSection } from '@/react/components/form-components/FormSection';
 
 import { environmentTypes } from '../EnvironmentTypeSelectView/environment-types';
 import { EnvironmentSelectorValue } from '../EnvironmentTypeSelectView/EnvironmentSelector';
