@@ -2,7 +2,8 @@ import { Field, Form, Formik } from 'formik';
 import { useReducer, useState } from 'react';
 import { object, SchemaOf, string } from 'yup';
 
-import { BoxSelector, buildOption } from '@/portainer/components/BoxSelector';
+import { BoxSelector } from '@/react/components/BoxSelector';
+import { buildOption } from '@/portainer/components/BoxSelector';
 import { FormControl } from '@/portainer/components/form-components/FormControl';
 import { Input } from '@/portainer/components/form-components/Input';
 import { LoadingButton } from '@/portainer/components/Button/LoadingButton';
