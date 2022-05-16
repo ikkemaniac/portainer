@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useRouter } from '@uirouter/react';
 import _ from 'lodash';
 
-import { Button } from '@/portainer/components/Button';
+import { Button } from '@/react/components/buttons';
 import { PageHeader } from '@/portainer/components/PageHeader';
 import { Widget, WidgetBody, WidgetTitle } from '@/portainer/components/widget';
 import { useAnalytics } from '@/angulartics.matomo/analytics-services';

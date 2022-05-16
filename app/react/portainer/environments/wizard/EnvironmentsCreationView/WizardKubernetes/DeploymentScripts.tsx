@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { CopyButton } from '@/portainer/components/Button/CopyButton';
+import { CopyButton } from '@/react/components/buttons/CopyButton';
 import { Code } from '@/portainer/components/Code';
 import { FormSectionTitle } from '@/portainer/components/form-components/FormSectionTitle';
 import { NavTabs } from '@/portainer/components/NavTabs/NavTabs';

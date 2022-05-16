@@ -1,7 +1,7 @@
 import { Field, Form, Formik, useFormikContext } from 'formik';
 import { useReducer } from 'react';
 
-import { LoadingButton } from '@/portainer/components/Button/LoadingButton';
+import { LoadingButton } from '@/react/components/buttons/LoadingButton';
 import { useCreateLocalDockerEnvironmentMutation } from '@/portainer/environments/queries/useCreateEnvironmentMutation';
 import { notifySuccess } from '@/portainer/services/notifications';
 import { FormControl } from '@/portainer/components/form-components/FormControl';
