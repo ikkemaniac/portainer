@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { CopyButton } from '@/react/components/buttons/CopyButton';
 import { Code } from '@/react/components/Code';
 import { FormSectionTitle } from '@/portainer/components/form-components/FormSectionTitle';
-import { NavTabs } from '@/portainer/components/NavTabs/NavTabs';
+import { NavTabs } from '@/react/components/NavTabs';
 import { getAgentShortVersion } from '@/portainer/views/endpoints/helpers';
 import { useAgentDetails } from '@/portainer/environments/queries/useAgentDetails';
 
