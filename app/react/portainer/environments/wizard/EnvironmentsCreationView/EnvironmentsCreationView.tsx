@@ -4,7 +4,7 @@ import _ from 'lodash';
 import clsx from 'clsx';
 
 import { Stepper } from '@/react/components/Stepper';
-import { Widget, WidgetBody, WidgetTitle } from '@/portainer/components/widget';
+import { Widget, WidgetBody, WidgetTitle } from '@/react/components/Widget';
 import { notifyError } from '@/portainer/services/notifications';
 import { PageHeader } from '@/react/components/PageHeader';
 import { Button } from '@/react/components/buttons';

@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 import { Button } from '@/react/components/buttons';
 import { PageHeader } from '@/react/components/PageHeader';
-import { Widget, WidgetBody, WidgetTitle } from '@/portainer/components/widget';
+import { Widget, WidgetBody, WidgetTitle } from '@/react/components/Widget';
 import { useAnalytics } from '@/angulartics.matomo/analytics-services';
 
 import {
