@@ -1,4 +1,4 @@
-import { PageHeader } from '@/portainer/components/PageHeader';
+import { PageHeader } from '@/react/components/PageHeader';
 import { Widget, WidgetBody, WidgetTitle } from '@/portainer/components/widget';
 import { EnvironmentType } from '@/portainer/environments/types';
 import { useAnalytics } from '@/angulartics.matomo/analytics-services';

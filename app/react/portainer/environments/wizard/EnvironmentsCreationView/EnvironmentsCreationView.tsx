@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { Stepper } from '@/react/components/Stepper';
 import { Widget, WidgetBody, WidgetTitle } from '@/portainer/components/widget';
 import { notifyError } from '@/portainer/services/notifications';
-import { PageHeader } from '@/portainer/components/PageHeader';
+import { PageHeader } from '@/react/components/PageHeader';
 import { Button } from '@/react/components/buttons';
 import { Environment, EnvironmentId } from '@/portainer/environments/types';
 import { useAnalytics } from '@/angulartics.matomo/analytics-services';
