@@ -1,7 +1,5 @@
 import angular from 'angular';
 
-import { CreateAccessTokenAngular } from '../views/account/CreateAccessToken';
-
 import formComponentsModule from './form-components';
 import sidebarModule from './sidebar';
 import gitFormModule from './forms/git-form';
@@ -20,5 +18,4 @@ export default angular
   .component('informationPanel', InformationPanelAngular)
   .component('viewLoading', ViewLoadingAngular)
   .component('portainerTooltip', TooltipAngular)
-  .component('beFeatureIndicator', beFeatureIndicator)
-  .component('createAccessToken', CreateAccessTokenAngular).name;
+  .component('beFeatureIndicator', beFeatureIndicator).name;
