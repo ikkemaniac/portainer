@@ -51,7 +51,10 @@ angular.module('portainer.app').controller('AccountController', [
       $scope.passwordStrength = StrengthCheck($scope.formValues.newPassword);
     };
 
-    this.uiCanExit = () => {
+    this.uiCanExit = (newTransition) => {
+      if ($scope.userRole === 1 && newTransition.to().name === 'portainer.settings.authentication') {
+        return true;
+      }
       if ($scope.forceChangePassword) {
         ModalService.confirmForceChangePassword();
       }
@@ -111,7 +114,7 @@ angular.module('portainer.app').controller('AccountController', [
     async function initView() {
       $scope.userID = Authentication.getUserDetails().ID;
       $scope.userRole = Authentication.getUserDetails().role;
-      $scope.forceChangePassword = Authentication.getUserDetails().forceChangePassword;
+      $scope.forceChangePassword = !Authentication.getUserDetails().forceChangePassword;
       $scope.timesPasswordChangeSkipped = StateManager.getState().UI.timesPasswordChangeSkipped || 0;
       const data = await UserService.user($scope.userID);
 
