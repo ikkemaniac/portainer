@@ -4,6 +4,8 @@ import { PublicSettingsViewModel } from '@/portainer/models/settings';
 
 import axios, { parseAxiosError } from '../services/axios';
 
+import { Settings } from './types';
+
 export async function publicSettings() {
   try {
     const { data } = await axios.get(buildUrl('public'));
@@ -14,37 +16,6 @@ export async function publicSettings() {
       'Unable to retrieve application settings'
     );
   }
-}
-
-enum AuthenticationMethod {
-  // AuthenticationInternal represents the internal authentication method (authentication against Portainer API)
-  AuthenticationInternal,
-  // AuthenticationLDAP represents the LDAP authentication method (authentication against a LDAP server)
-  AuthenticationLDAP,
-  // AuthenticationOAuth represents the OAuth authentication method (authentication against a authorization server)
-  AuthenticationOAuth,
-}
-
-export interface Settings {
-  LogoURL: string;
-  BlackListedLabels: { name: string; value: string }[];
-  AuthenticationMethod: AuthenticationMethod;
-  SnapshotInterval: string;
-  TemplatesURL: string;
-  EnableEdgeComputeFeatures: boolean;
-  UserSessionTimeout: string;
-  KubeconfigExpiry: string;
-  EnableTelemetry: boolean;
-  HelmRepositoryURL: string;
-  KubectlShellImage: string;
-  TrustOnFirstConnect: boolean;
-  EnforceEdgeID: boolean;
-  AgentSecret: string;
-  EdgePortainerUrl: string;
-  EdgeAgentCheckinInterval: number;
-  EdgePingInterval: number;
-  EdgeSnapshotInterval: number;
-  EdgeCommandInterval: number;
 }
 
 export async function getSettings() {

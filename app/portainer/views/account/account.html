@@ -67,9 +67,7 @@
                 ng-click="updatePassword()"
                 >Update password</button
               >
-              <button type="submit" class="btn btn-primary btn-sm" ng-click="skipPasswordChange()" ng-if="forceChangePassword && timesPasswordChangeSkipped < 2"
-                >Remind me later</button
-              >
+              <button type="submit" class="btn btn-primary btn-sm" ng-click="skipPasswordChange()" ng-if="forceChangePassword && userCanSkip()">Remind me later</button>
               <span class="text-muted small" style="margin-left: 5px" ng-if="AuthenticationMethod === 2 && userID !== 1">
                 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
                 You cannot change your password when using LDAP authentication.
