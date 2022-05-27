@@ -116,15 +116,22 @@ angular.module('portainer.app').controller('AccountController', [
     async function initView() {
       $scope.userID = Authentication.getUserDetails().ID;
       $scope.userRole = Authentication.getUserDetails().role;
-      $scope.forceChangePassword = Authentication.getUserDetails().forceChangePassword;
-      $scope.timesPasswordChangeSkipped = StateManager.getState().UI.timesPasswordChangeSkipped || 0;
-      const data = await UserService.user($scope.userID);
+      $scope.forceChangePassword = !Authentication.getUserDetails().forceChangePassword;
 
+      const data = await UserService.user($scope.userID);
       $scope.formValues.userTheme = data.Usertheme;
+
       SettingsService.publicSettings()
         .then(function success(data) {
           $scope.AuthenticationMethod = data.AuthenticationMethod;
+
+          if (StateManager.getState().UI.requiredPasswordLength && StateManager.getState().UI.requiredPasswordLength !== data.RequiredPasswordLength) {
+            StateManager.resetPasswordChangeSkips();
+          }
+          $scope.timesPasswordChangeSkipped = StateManager.getState().UI.timesPasswordChangeSkipped || 0;
+
           $scope.requiredPasswordLength = data.RequiredPasswordLength;
+          StateManager.setRequiredPasswordLength(data.RequiredPasswordLength);
         })
         .catch(function error(err) {
           Notifications.error('Failure', err, 'Unable to retrieve application settings');
