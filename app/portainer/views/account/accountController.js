@@ -116,7 +116,7 @@ angular.module('portainer.app').controller('AccountController', [
     async function initView() {
       $scope.userID = Authentication.getUserDetails().ID;
       $scope.userRole = Authentication.getUserDetails().role;
-      $scope.forceChangePassword = !Authentication.getUserDetails().forceChangePassword;
+      $scope.forceChangePassword = Authentication.getUserDetails().forceChangePassword;
 
       const data = await UserService.user($scope.userID);
       $scope.formValues.userTheme = data.Usertheme;
